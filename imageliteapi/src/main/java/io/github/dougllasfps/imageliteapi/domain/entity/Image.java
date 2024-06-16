@@ -9,9 +9,9 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
-import java.security.cert.CertPathBuilder;
 import java.time.LocalDateTime;
 
+// Objeto a ser criado
 @Entity
 @Table
 @EntityListeners(AuditingEntityListener.class)
@@ -39,4 +39,9 @@ public class Image {
     @Column
     @Lob
     private byte[] file;
+
+    public String getFileName(){
+        return getName().concat(".").concat(getExtension().name());
+    }
+
 }

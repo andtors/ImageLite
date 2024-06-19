@@ -20,7 +20,6 @@ export const ImageCard: React.FC<ImageCardProps>  = ({nome, tamanho, dataUpload,
             <p className="text-grey-600">{dataUpload}</p>
             <p className="text-grey-600">{formatBytes(tamanho)}</p>
             <p className="text-grey-600">{extension}</p>
-        
         </div>
     </div>
   )

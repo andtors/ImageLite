@@ -1,6 +1,11 @@
-const FormularioPage = () => {
+import { Template } from "@/components"
+
+ const FormularioPage = () => {
   return (
+    <Template>
     <div>Formulario</div>
+    </Template>
+    
   )
 }
 

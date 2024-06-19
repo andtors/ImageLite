@@ -1,9 +1,9 @@
 interface TemplateProps {
     children: React.ReactNode;
-    loading: boolean;
+    loading?: boolean;
 }
 
-export const Template: React.FC<TemplateProps> = ({ children, loading }: TemplateProps) => {
+export const Template: React.FC<TemplateProps> = ({ children, loading = false}: TemplateProps) => {
     return (
         <>
             <Header />

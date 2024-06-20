@@ -47,7 +47,7 @@ const GaleriaPage = () => {
               <option value="JPEG">JPEG</option>
               <option value="GIF">GIF</option>
             </select>
-            <Button style="bg-blue-500 hover:bg-blue-300" label="search" onClick={searchImage}/>
+            <Button style="bg-blue-500 hover:bg-blue-300" label="Search" onClick={searchImage}/>
             <Link href='/formulario'>
             <Button style="bg-yellow-500 hover:bg-yellow-300" label="Add new"/> 
             </Link>

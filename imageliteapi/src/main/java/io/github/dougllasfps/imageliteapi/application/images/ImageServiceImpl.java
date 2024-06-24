@@ -5,6 +5,7 @@ import io.github.dougllasfps.imageliteapi.domain.enums.ImageExtension;
 import io.github.dougllasfps.imageliteapi.domain.service.ImageService;
 import io.github.dougllasfps.imageliteapi.infra.repository.ImageRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -17,6 +18,7 @@ import java.util.Optional;
 public class ImageServiceImpl implements ImageService {
 
     private final ImageRepository repository;
+    private final PasswordEncoder passwordEncoder;
 
     @Override
     @Transactional

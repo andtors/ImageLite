@@ -1,7 +1,7 @@
 'use client'
 
-import { InputText, Template, Button, RenderIf, useNotification, FieldError } from "@/components"
-import { useImageService } from '@/resources/image/image.service'
+import { InputText, Template, Button, RenderIf, useNotification, FieldError, AuthenticatedPage } from "@/components"
+import { useImageService } from '@/resources'
 import { FormProps, formSchema, formValidationScheme } from './formScheme'
 import { useFormik } from "formik"
 import { useState } from "react";
@@ -47,6 +47,7 @@ const FormularioPage = () => {
   }
 
   return (
+    <AuthenticatedPage>
     <Template loading={loading}>
       <section className="flex flex-col items-center justify-center my-5">
         <h5 className="mt-3 mb-10 text-3xl font-extrabold tracking-tight text-gray-900">Nova imagem</h5>
@@ -96,7 +97,7 @@ const FormularioPage = () => {
         </form>
       </section>
     </Template>
-
+    </AuthenticatedPage>
   )
 }
 

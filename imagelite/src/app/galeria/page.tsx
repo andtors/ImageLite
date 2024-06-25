@@ -1,8 +1,8 @@
 'use client'
 
-import { Template, ImageCard, Button, InputText, useNotification } from "@/components"
+import { Template, ImageCard, Button, InputText, useNotification, AuthenticatedPage } from "@/components"
 import { useEffect, useState } from "react"
-import { useImageService } from '@/resources/image/image.service'
+import { useImageService } from '@/resources'
 import { Image } from "@/resources/image/image.resource"
 import Link from "next/link"
 
@@ -43,6 +43,7 @@ const GaleriaPage = () => {
   }
 
   return (
+    <AuthenticatedPage>
     <Template loading={loading}>
         <section className="flex flex-col items-center justify-center my-5">
           <div className="flex space-x-4">
@@ -65,6 +66,7 @@ const GaleriaPage = () => {
           }
       </section>
     </Template>
+    </AuthenticatedPage>
   )
 }
 

@@ -34,7 +34,7 @@ public class JwtFilter extends OncePerRequestFilter {
 
         if(token != null){
             try {
-                String email  =jwtService.getEmailFromToken(token);
+                String email  = jwtService.getEmailFromToken(token);
                 User user = userService.getByEmail(email);
                 setUserAsAuthenticated(user);
             } catch (InvalidTokenException e) {
@@ -69,5 +69,10 @@ public class JwtFilter extends OncePerRequestFilter {
         }
 
         return null;
+    }
+
+    @Override
+    protected boolean shouldNotFilter(HttpServletRequest request) throws ServletException {
+        return request.getRequestURI().contains("/v1/users");
     }
 }
